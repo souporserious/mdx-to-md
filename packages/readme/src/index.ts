@@ -9,7 +9,7 @@ async function build() {
   const banner = `This README was auto-generated from "packages/mdx-to-mdx/README.mdx" using "yarn build:readme"`
   const readme = `<!--- ${banner} --> \n\n ${markdown}`
 
-  writeFile("../../README.md", readme).then(() => {
+  writeFile("../mdx-to-md/README.md", readme).then(() => {
     console.log("📝 Converted README.mdx -> README.md")
   })
 }
