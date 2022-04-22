@@ -5,16 +5,20 @@
   ],
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev"
+    "dev": "turbo run dev",
+    "test": "turbo run test"
   },
   "devDependencies": {
     "@types/node": "^17.0.25",
     "@types/react": "^18.0.6",
     "@types/react-dom": "^18.0.2",
+    "esbuild-register": "^3.3.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "turbo": "1.2.4",
-    "tsup": "^5.12.6"
+    "tsup": "^5.12.6",
+    "turbo": "1.2.5",
+    "typescript": "^4.6.3",
+    "uvu": "^0.5.3"
   },
   "prettier": {
     "arrowParens": "always",
