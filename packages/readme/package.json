@@ -1,0 +1,14 @@
+{
+  "name": "readme",
+  "version": "0.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsup-node src/index.ts --format cjs --target node15 --onSuccess 'node dist/index.js'",
+    "dev": "yarn build --watch --sourcemap"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "mdx-to-md": "*"
+  }
+}

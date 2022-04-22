@@ -1,0 +1,35 @@
+{
+  "name": "mdx-to-md",
+  "version": "0.1.0",
+  "description": "Convert MDX to Markdown.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/souporserious/mdx-to-md"
+  },
+  "keywords": [
+    "markdown",
+    "md",
+    "mdx",
+    "jsx"
+  ],
+  "author": "Travis Arnold",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts"
+  ],
+  "scripts": {
+    "build": "tsup-node src/index.ts --format cjs --target node15 --onSuccess 'node dist/index.js'",
+    "dev": "yarn build --watch --sourcemap"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^2.1.1",
+    "@swc/core": "^1.2.170",
+    "node-html-markdown": "^1.2.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "typescript": "^4.6.3"
+  }
+}
