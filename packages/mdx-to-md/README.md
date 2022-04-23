@@ -1,6 +1,6 @@
-<!--- This README was auto-generated from "packages/mdx-to-md/src/README.mdx" using "yarn build" --> 
+<!--- This markdown file was auto-generated from "src/README.mdx" -->
 
- # mdx-to-md
+# mdx-to-md
 
 Convert MDX to Markdown. 
 
@@ -18,7 +18,21 @@ yarn add mdx-to-md
 npm install mdx-to-md
 ```
 
-## Usage
+## CLI
+
+```bash
+mdx-to-md [sourcePath] [outPath]
+
+```
+
+In the simplest use case, you can run the CLI and it will output the converted Markdown relative to the current working directory the script was run in:
+
+```bash
+yarn mdx-to-md README.mdx
+
+```
+
+## Node
 
 Start with MDX:
 
@@ -63,14 +77,5 @@ Convert MDX to Markdown.
 # Install
 
 yarn add mdx-to-md
-
-```
-
-## CLI
-
-Coming Soon
-
-```bash
-mdx-to-md README.mdx
 
 ```

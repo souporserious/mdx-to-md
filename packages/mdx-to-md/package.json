@@ -1,6 +1,6 @@
 {
   "name": "mdx-to-md",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Convert MDX to Markdown.",
   "repository": {
     "type": "git",
@@ -16,17 +16,25 @@
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": {
+    "mdx-to-md": "dist/cli.js"
+  },
   "files": [
     "dist/index.js",
     "dist/index.d.ts"
   ],
   "scripts": {
-    "build": "tsup-node src/index.ts --format cjs --target node15 --onSuccess 'node dist/index.js'",
+    "build": "tsup-node src/index.ts src/cli.ts --format cjs --target node15 --onSuccess 'node dist/index.js'",
+    "build:readme": "node dist/cli.js src/README.mdx",
+    "postbuild": "yarn build:readme",
     "dev": "yarn build --watch --sourcemap",
+    "dev:readme": "yarn build:readme --watch",
     "test": "uvu -r esbuild-register tests"
   },
   "dependencies": {
     "@mdx-js/mdx": "^2.1.1",
+    "args-flags": "^1.1.1",
+    "chokidar": "^3.5.3",
     "mdx-bundler": "^9.0.0",
     "node-html-markdown": "^1.2.0",
     "react": "^18.0.0",

@@ -18,7 +18,19 @@ This library is most useful for generating README.md files [like the one you're 
   <code className="language-bash">npm install {name}</code>
 </pre>
 
-## Usage
+## CLI
+
+```bash
+mdx-to-md [sourcePath] [outPath]
+```
+
+In the simplest use case, you can run the CLI and it will output the converted Markdown relative to the current working directory the script was run in:
+
+```bash
+yarn mdx-to-md README.mdx
+```
+
+## Node
 
 Start with MDX:
 
@@ -61,12 +73,4 @@ Convert MDX to Markdown.
 # Install
 
 yarn add mdx-to-md
-```
-
-## CLI
-
-Coming Soon
-
-```bash
-mdx-to-md README.mdx
 ```
