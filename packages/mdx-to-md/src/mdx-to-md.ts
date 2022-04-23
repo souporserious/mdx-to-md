@@ -13,11 +13,10 @@ const htmlToMarkdown = new NodeHtmlMarkdown()
  * Converts MDX to Markdown. This is useful for rendering dynamic README.md files.
  *
  * @example
- * import { readFile } from "fs/promises"
+ * import { resolve } from "path"
  * import { mdxToMd } from "mdx-to-md"
  *
- * const contents = await readFile('README.mdx', 'utf-8')
- * const markdown = await mdxToMd(contents)
+ * const markdown = await mdxToMd(resolve(process.cwd(), "README.mdx"))
  */
 export async function mdxToMd<
   Frontmatter extends {
