@@ -8,16 +8,14 @@ Convert MDX to Markdown.
 
 This library is most useful for generating README.md files [like the one you're reading](/packages/mdx-to-md/src/README.mdx).
 
-## Install
+# Install
 
 ```bash
 yarn add mdx-to-md
-
 ```
 
 ```bash
 npm install mdx-to-md
-
 ```
 
 ## Usage
