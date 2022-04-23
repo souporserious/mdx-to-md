@@ -20,14 +20,20 @@ npm install mdx-to-md
 
 ## Usage
 
-Take MDX using your favorite library:
+Start with MDX:
 
 ```mdx
-import { Text } from "@chakra-ui/react"
+import { name, description } from "./package.json"
 
-# Hello World
+# {name}
 
-<Text color="tomato">Compile static MDX content to Markdown 😎</Text>
+{description}
+
+# Install
+
+<pre>
+  <code className="language-bash">yarn add {name}</code>
+</pre>
 
 ```
 
@@ -44,5 +50,27 @@ const readme = `<!--- ${banner} --> \n\n ${markdown}`
 await writeFile("README.md", readme)
 
 console.log("📝 Converted README.mdx -> README.md")
+
+```
+
+Which outputs:
+
+```md
+# mdx-to-md
+
+Convert MDX to Markdown.
+
+# Install
+
+yarn add mdx-to-md
+
+```
+
+## CLI
+
+Coming Soon
+
+```bash
+mdx-to-md README.mdx
 
 ```
