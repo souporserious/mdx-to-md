@@ -1,10 +1,11 @@
-import type { CompileOptions } from "@mdx-js/mdx"
 import { NodeHtmlMarkdown } from "node-html-markdown"
-import { renderToString } from "react-dom/server"
+import { bundleMDX } from "mdx-bundler"
+import type { BundleMDX } from "mdx-bundler/dist/types"
+import { getMDXComponent } from "mdx-bundler/client"
 import { createElement } from "react"
+import { renderToString } from "react-dom/server"
 import { readFile } from "fs/promises"
-import { dirname, resolve } from "path"
-import { executeCode } from "./execute-code"
+import { dirname } from "path"
 
 const htmlToMarkdown = new NodeHtmlMarkdown()
 
@@ -18,25 +19,21 @@ const htmlToMarkdown = new NodeHtmlMarkdown()
  * const contents = await readFile('README.mdx', 'utf-8')
  * const markdown = await mdxToMd(contents)
  */
-export async function mdxToMd(
+export async function mdxToMd<
+  Frontmatter extends {
+    [key: string]: any
+  }
+>(
   /** The path to the MDX file. */
   path: string,
-  {
-    cwd,
-    compileOptions,
-  }: {
-    /** The current working directory. Defaults to process.cwd(). */
-    cwd?: string
 
-    /** MDX [compile options](https://mdxjs.com/packages/mdx/#compilefile-options) */
-    compileOptions?: CompileOptions
-  } = {}
+  /** Configure internal library options. */
+  options?: Pick<BundleMDX<Frontmatter>, "esbuildOptions" | "grayMatterOptions" | "mdxOptions">
 ) {
-  const contents = await readFile(resolve(cwd ?? process.cwd(), path), "utf-8")
-  const { compile } = await import("@mdx-js/mdx")
-  const compiledCode = await compile(contents, compileOptions)
-  const executedCode = await executeCode(compiledCode.value.toString(), dirname(path))
-  const element = createElement(executedCode as any)
+  const contents = await readFile(path, "utf-8")
+  const { code } = await bundleMDX({ source: contents, cwd: dirname(path), ...options })
+  const component = getMDXComponent(code)
+  const element = createElement(component)
   const html = renderToString(element)
   const markdown = htmlToMarkdown.translate(html)
 

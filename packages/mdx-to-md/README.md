@@ -1,19 +1,21 @@
-<!--- This README was auto-generated from "packages/mdx-to-mdx/README.mdx" using "yarn build:readme" --> 
+<!--- This README was auto-generated from "packages/mdx-to-md/src/README.mdx" using "yarn build" -->
 
- # mdx-to-md
+# mdx-to-md
 
-Convert MDX to Markdown. 
+Convert MDX to Markdown.
+
+## Why?
+
+This library is most useful for generating README.md files [like the one you're reading](%28/packages/mdx-to-md%29).
 
 ## Install
 
 ```bash
 yarn add mdx-to-md
-
 ```
 
 ```bash
 npm install mdx-to-md
-
 ```
 
 ## Usage
@@ -26,7 +28,6 @@ import { Text } from "@chakra-ui/react"
 # Hello World
 
 <Text color="tomato">Compile static MDX content to Markdown 😎</Text>
-
 ```
 
 And convert it to Markdown:
@@ -42,5 +43,4 @@ const readme = `<!--- ${banner} --> \n\n ${markdown}`
 await writeFile("README.md", readme)
 
 console.log("📝 Converted README.mdx -> README.md")
-
 ```
