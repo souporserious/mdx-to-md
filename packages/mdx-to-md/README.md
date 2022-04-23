@@ -1,6 +1,6 @@
-<!--- This README was auto-generated from "packages/mdx-to-md/src/README.mdx" using "yarn build" --> 
+<!--- This markdown file was auto-generated from "src/README.mdx" -->
 
- # mdx-to-md
+# mdx-to-md
 
 Convert MDX to Markdown. 
 
