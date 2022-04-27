@@ -21,7 +21,8 @@
   },
   "files": [
     "dist/index.js",
-    "dist/index.d.ts"
+    "dist/index.d.ts",
+    "dist/cli.js"
   ],
   "scripts": {
     "build": "tsup-node src/index.ts src/cli.ts --format cjs --target node15 --onSuccess 'node dist/index.js'",
