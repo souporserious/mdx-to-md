@@ -1,4 +1,4 @@
-#!/bin/env node
+#!/usr/bin/env node
 import { basename, resolve } from "path"
 import { writeFile } from "fs/promises"
 import { mdxToMd } from "mdx-to-md"
