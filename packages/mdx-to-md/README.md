@@ -57,7 +57,7 @@ And convert it to Markdown:
 import { writeFile } from "fs/promises"
 import { mdxToMd } from "mdx-to-md"
 
-const markdown = await mdxToMarkdown("README.mdx")
+const markdown = await mdxToMd("README.mdx")
 const banner = `This README was auto-generated using "yarn build:readme"`
 const readme = `<!--- ${banner} --> \n\n ${markdown}`
 
