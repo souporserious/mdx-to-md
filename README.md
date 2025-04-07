@@ -54,10 +54,12 @@ import { name, description } from "./package.json"
 And convert it to Markdown:
 
 ```ts
-import { writeFile } from "fs/promises"
+import { writeFile } from "node:fs/promises"
+import { resolve } from "node:path"
 import { mdxToMd } from "mdx-to-md"
 
-const markdown = await mdxToMd("README.mdx")
+const mdxPath = resolve(process.cwd(), "README.mdx")
+const markdown = await mdxToMd(mdxPath)
 const banner = `This README was auto-generated using "pnpm build:readme"`
 const readme = `<!--- ${banner} --> \n\n ${markdown}`
 
