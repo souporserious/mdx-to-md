@@ -1,7 +1,7 @@
 {
   "name": "mdx-to-md",
   "type": "module",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Convert MDX to Markdown.",
   "repository": {
     "type": "git",
