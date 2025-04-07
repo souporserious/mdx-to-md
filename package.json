@@ -5,7 +5,7 @@
   "description": "Convert MDX to Markdown.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/souporserious/mdx-to-md"
+    "url": "git+https://github.com/souporserious/mdx-to-md.git"
   },
   "keywords": [
     "markdown",
