@@ -1,24 +1,58 @@
 {
-  "private": true,
-  "workspaces": [
-    "packages/*"
+  "name": "mdx-to-md",
+  "type": "module",
+  "version": "0.3.2",
+  "description": "Convert MDX to Markdown.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/souporserious/mdx-to-md"
+  },
+  "keywords": [
+    "markdown",
+    "md",
+    "mdx",
+    "jsx"
+  ],
+  "author": "Travis Arnold",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "mdx-to-md": "dist/cli.js"
+  },
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts",
+    "dist/cli.js"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "test": "turbo run test"
+    "build": "tsc && chmod +x dist/cli.js",
+    "build:readme": "node dist/cli.js src/README.mdx",
+    "postbuild": "pnpm build:readme",
+    "prepublishOnly": "npm run build",
+    "dev": "pnpm build --watch --sourcemap",
+    "dev:readme": "pnpm build:readme --watch",
+    "test": "uvu -r esbuild-register tests"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^3.1.0",
+    "args-flags": "^1.1.1",
+    "chokidar": "^4.0.3",
+    "mdx-bundler": "^10.1.1",
+    "node-html-markdown": "^1.3.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@types/node": "^17.0.25",
-    "@types/react": "^18.0.6",
-    "@types/react-dom": "^18.0.2",
-    "esbuild-register": "^3.3.2",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "tsup": "^8.4.0",
-    "turbo": "1.2.5",
-    "typescript": "^4.6.3",
-    "uvu": "^0.5.3"
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.1",
+    "esbuild-register": "^3.6.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "turbo": "2.5.0",
+    "typescript": "^5.8.3",
+    "uvu": "^0.5.6"
   },
   "prettier": {
     "arrowParens": "always",

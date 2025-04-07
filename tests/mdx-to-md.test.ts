@@ -11,7 +11,7 @@ Convert MDX to Markdown.
 # Install
 
 \`\`\`bash
-yarn add mdx-to-md
+pnpm add mdx-to-md
 \`\`\`
 
 \`\`\`bash

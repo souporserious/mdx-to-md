@@ -11,7 +11,7 @@ This library is most useful for generating README.md files [like the one you're 
 # Install
 
 <pre>
-  <code className="language-bash">yarn add {name}</code>
+  <code className="language-bash">pnpm add {name}</code>
 </pre>
 
 <pre>
@@ -27,7 +27,7 @@ mdx-to-md [sourcePath] [outPath]
 In the simplest use case, you can run the CLI and it will output the converted Markdown relative to the current working directory the script was run in:
 
 ```bash
-yarn mdx-to-md README.mdx
+pnpm mdx-to-md README.mdx
 ```
 
 ## Node
@@ -44,7 +44,7 @@ import { name, description } from "./package.json"
 # Install
 
 <pre>
-  <code className="language-bash">yarn add {name}</code>
+  <code className="language-bash">pnpm add {name}</code>
 </pre>
 ```
 
@@ -55,7 +55,7 @@ import { writeFile } from "fs/promises"
 import { mdxToMd } from "mdx-to-md"
 
 const markdown = await mdxToMd("README.mdx")
-const banner = `This README was auto-generated using "yarn build:readme"`
+const banner = `This README was auto-generated using "pnpm build:readme"`
 const readme = `<!--- ${banner} --> \n\n ${markdown}`
 
 await writeFile("README.md", readme)
@@ -72,5 +72,5 @@ Convert MDX to Markdown.
 
 # Install
 
-yarn add mdx-to-md
+pnpm add mdx-to-md
 ```

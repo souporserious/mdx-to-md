@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-import { basename, resolve } from "path"
-import { writeFile } from "fs/promises"
-import { mdxToMd } from "mdx-to-md"
+import { basename, resolve } from "node:path"
+import { writeFile } from "node:fs/promises"
 import { watch } from "chokidar"
 import { args, flags } from "args-flags"
+
+import { mdxToMd } from "./mdx-to-md.js"
 
 const [sourcePath, outPath = basename(sourcePath).slice(0, -1)] = args
 const sourceMDX = resolve((flags.cwd as string) ?? process.cwd(), sourcePath)

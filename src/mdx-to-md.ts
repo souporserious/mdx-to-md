@@ -1,11 +1,11 @@
 import { NodeHtmlMarkdown } from "node-html-markdown"
 import { bundleMDX } from "mdx-bundler"
 import type { BundleMDX } from "mdx-bundler/dist/types"
-import { getMDXComponent } from "mdx-bundler/client"
+import { getMDXComponent } from "mdx-bundler/client/index.js"
 import { createElement } from "react"
 import { renderToString } from "react-dom/server"
-import { readFile } from "fs/promises"
-import { dirname } from "path"
+import { readFile } from "node:fs/promises"
+import { dirname } from "node:path"
 
 const htmlToMarkdown = new NodeHtmlMarkdown()
 
