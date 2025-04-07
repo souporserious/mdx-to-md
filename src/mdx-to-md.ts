@@ -30,7 +30,18 @@ export async function mdxToMd<
   options?: Pick<BundleMDX<Frontmatter>, "esbuildOptions" | "grayMatterOptions" | "mdxOptions">
 ) {
   const contents = await readFile(path, "utf-8")
-  const { code } = await bundleMDX({ source: contents, cwd: dirname(path), ...options })
+  const { code } = await bundleMDX({
+    source: contents,
+    cwd: dirname(path),
+    ...options,
+    esbuildOptions: (esbuildOptions) => {
+      return {
+        ...esbuildOptions,
+        platform: "node",
+        ...options?.esbuildOptions,
+      }
+    },
+  })
   const component = getMDXComponent(code)
   const element = createElement(component)
   const html = renderToString(element)
