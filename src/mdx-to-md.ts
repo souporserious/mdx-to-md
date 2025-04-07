@@ -38,6 +38,7 @@ export async function mdxToMd<
       return {
         ...esbuildOptions,
         platform: "node",
+        external: ["react", "react-dom"],
         ...options?.esbuildOptions,
       }
     },
