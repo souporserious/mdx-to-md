@@ -5,6 +5,7 @@
     "lib": ["ES2020"],
     "outDir": "./dist",
     "strict": true,
+    "declaration": true,
     "moduleResolution": "node",
     "skipLibCheck": true
   },

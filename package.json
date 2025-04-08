@@ -21,9 +21,7 @@
     "mdx-to-md": "dist/cli.js"
   },
   "files": [
-    "dist/index.js",
-    "dist/index.d.ts",
-    "dist/cli.js"
+    "dist/*"
   ],
   "scripts": {
     "build": "tsc && chmod +x dist/cli.js",
