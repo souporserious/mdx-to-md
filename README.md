@@ -6,7 +6,7 @@ Convert MDX to Markdown.
 
 ## Why?
 
-This library is most useful for generating README.md files [like the one you're reading](/src/README.mdx).
+This library is most useful for templating README.md files [like the one you're reading](/src/README.mdx).
 
 # Install
 
